@@ -9,9 +9,14 @@ const io = socketio(server)
 app.use('/',express.static(__dirname+'/public'))
 io.on('connection',(socket) =>{
     console.log("connection", socket.id)
-    socket.on('msg_send',(data) =>{
-        io.emit('msg_rcvd',data)//emit on io not socket 
+    socket.on('login',(data) =>{
+        socket.join(data.username)
+        socket.emit('logged_in')
+        console.log('user logged in: ',data)
     })
+    // socket.on('msg_send',(data) =>{
+    //     io.emit('msg_rcvd',data)//emit on io not socket because if socket then the data is only sent back to that socket
+    // })
 })
 
 
