@@ -44,12 +44,18 @@ $('#btnSend').click(function () {
 socket.on('msg_rcvd', (data) => {
     console.log(data)
     let liNewMsg = document.createElement('li')
-    liNewMsg.innerText = data.from + "->" + data.msg
+    let liMsgDiv = document.createElement('span')
+
+    liMsgDiv.innerText =data.from + "➡️" +data.msg 
+    // let liMsgSender = document.createElement('span')
+    // liMsgSender.innerText = data.from
+    // liNewMsg.append(liMsgSender)
+    liNewMsg.append(liMsgDiv)
     console.log(liNewMsg)
     if(data.from === username){
-        liNewMsg.setAttribute('sender','self')
+        liMsgDiv.setAttribute('sender','self')
     }else{
-        liNewMsg.setAttribute('sender','other')
+        liMsgDiv.setAttribute('sender','other')
     }
     $('#ulMsgList').append(liNewMsg)
 })

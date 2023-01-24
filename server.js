@@ -8,7 +8,6 @@ const io = socketio(server)
 
 app.use('/', express.static(__dirname + '/public'))
 let users = {
-    yajat: 'password123'
 }
 let socketMap = {}
 io.on('connection', (socket) => {
