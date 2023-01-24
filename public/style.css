@@ -23,12 +23,14 @@
 }
 li[sender = other]{
     color:white;
-    background-color:grey;
+    background-color:#43CC47;
     padding:5px;
     width:auto;
     border-radius:1px;
+    
 }
 li[sender =  self]{
-    margin-left:500px;
-    background-color:var(--bg-primary)
+    margin-right:0px;
+    color:white;
+    background-color:#1982FC;
 }

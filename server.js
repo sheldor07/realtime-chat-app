@@ -54,3 +54,6 @@ io.on('connection', (socket) => {
 server.listen(4545, () => {
     console.log('server started on localhost:4545')
 })
+module.exports = {
+    socketMap
+}

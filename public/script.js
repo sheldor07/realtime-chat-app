@@ -1,4 +1,5 @@
 let socket = io()
+let username;
 // let btnSend = document.getElementById('btnSend')
 // let inpMsg = document.getElementById('inpMsg')
 // let ulMsgList = document.getElementById('ulMsgList')
@@ -21,6 +22,7 @@ $('#btnStart').click(function () {
         username: $('#inpUsername').val(),
         password: $('#inpPassword').val()
     })
+    username= $('#inpUsername').val()
     console.log("clicked")
 })
 
@@ -44,7 +46,7 @@ socket.on('msg_rcvd', (data) => {
     let liNewMsg = document.createElement('li')
     liNewMsg.innerText = data.from + "->" + data.msg
     console.log(liNewMsg)
-    if(data.from == socket.id){
+    if(data.from === username){
         liNewMsg.setAttribute('sender','self')
     }else{
         liNewMsg.setAttribute('sender','other')
