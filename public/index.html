@@ -1,29 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script async defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatly</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+  </script>
+  <script async defer src="script.js"></script>
+  <link rel=stylesheet href="style.css">
 </head>
+
 <body>
-    <h1>Chat App</h1>
-    <!-- <input id="inpMsg">
+  <div class="header-text">
+    <h1 class="fs-1">Chatly</h1>
+  </div>
+  <div id="page-content">
+    <div class="login-container">
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Username</label>
+          <input type="email" class="form-control" id="inpUsername" aria-describedby="emailHelp">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="inpPassword">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="passwordCheck" checked="false">
+          <label class="form-check-label" for="exampleCheck1">See Password</label>
+        </div>
+        <button type="submit" id=btnStart class="btn btn-primary">Start Chatting!</button>
+      </form>
+    </div>
+    <div class="container" id="chat-container">
+
+      <div class="row" id="chat-box">
+        <ul id="ulMsgList"></ul>
+      </div>
+      <div class="row" id="send-container">
+        <div class="col-sm">
+          <input type="text" id="inpToUser" class="form-control" placeholder="Send to (default to everyone">
+        </div>
+        <div class="col-sm">
+          <input type="text" id="inpNewMsg" class="form-control" placeholder="New Message">
+        </div>
+      <div class="col-sm d-inline">
+        <button class="btn btn-primary" id="btnSend">Send</button>
+      </div>
+    </div>
+    <!-- <div class="col-sm">
+          <input id="inpToUser" placeholder="Send to(default to everyone)">
+        </div>
+        <div class="col-sm">
+          <input id="inpNewMsg" placeholder="New Message">
+        </div>
+        <div class="col-sm">
+          <button class="btn btn-primary" id="btnSend">Send</button>
+        </div> -->
+
+
+
+  </div>
+
+  <!-- <input id="inpMsg">
     <button id="btnSend">Send</button>
     <ul id="ulMsgList"></ul> -->
-    <div id="loginBox">
-        <input id="inpUsername" placeholder="Username">
-        <input id="inpPassword" type="password" placeholder="Password">
-        <button id="btnStart">Login</button>
-    </div>
-    <div id="chatBox">
-        <input id="inpToUser" placeholder="Send to(default to everyone)">
-        <input id="inpNewMsg" placeholder="New Message">
-        <button id="btnSend">Send</button>
-        <ul id="ulMsgList"></ul>
-    </div>
+  </div>
+
 </body>
+
 </html>
